@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+    --font-roboto: 'Roboto', sans-serif;
+    --font-firacode: 'Fira Code', monospace;
+
+    --primary-text-color: #2dd4bf;
+
+    --bg-primary: rgb(17, 24, 39);
+
+    --bg-primary-nav: rgba(17, 24, 39, .5);
+    --logo-text-color: #ffffff;
+    --nav-link-color: rgb(156, 163, 175);
+    --nav-link-color-hover: rgb(229, 231, 236);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+}
+
+section.container {
+    position: relative;
+    max-width: 100vw;
+    min-height: 200vh;
+    background: url('../images/dark-rays-2.png'), rgb(17, 24, 39);
+    background-position-y: -250px;
+    background-position-x: center;
+    background-size: 55%;
+    background-repeat: no-repeat;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    padding-inline: 8%;
+    padding-block: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-roboto);
+    background: var(--bg-primary-nav);
+    backdrop-filter: blur(16px);
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+nav .logo img {
+    width: 35px;
+}
+
+nav .logo span {
+    color: var(--logo-text-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+nav ul.nav_links {
+    display: flex;
+    align-items: center;
+}
+
+ul.nav_links li a {
+    color: var(--nav-link-color);
+    font-weight: 400;
+    padding-inline: 10px;
+}
+
+ul.nav_links li a:hover {
+    font-weight: 500;
+    color: var(--nav-link-color-hover);
+}
+
+ul.nav_links li.active a {
+    font-weight: 500;
+    color: var(--primary-text-color);
+}
+
+nav button#theme_toggler,
+nav button#menu_toggler {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--logo-text-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* here menu open button is hiiden because menu is visisble default */
+nav button#menu_toggler {
+    display: none;
+}
+
+nav .responsive_menu
+{
+    display: none;
+}
+
+/*navbar code for tablets */
+@media screen and (max-width:768px) {
+
+    section.container {
+        background: url('../images/dark-rays-2.png'), rgb(17, 24, 39);
+        background-position-y: -80px;
+        background-position-x: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    /* here menu open button is visible and nav_items are hidden */
+    nav button#menu_toggler {
+        display: flex;
+    }
+
+    nav button#theme_toggler {
+        display: none;
+    }
+
+    nav ul.nav_links {
+        display: none;
+    }
+    
+    nav .responsive_menu
+    {
+        position: absolute;
+        left: 0%;
+        display: block;  
+        width: 100vw;
+        background:url('../images/dark-bg-1.jpg') ;
+        background-position: center;
+        background-size: cover;
+        transition: all .5s ease-in;
+        z-index: 99;
+    }
+    
+    .close_navbar
+    {
+        top: -500%;
+    }
+
+    .open_navbar
+    {
+        top: 100%;
+    }
+
+    nav .responsive_menu ul.nav_links
+    {
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-primary-nav);
+    }
+
+    nav .responsive_menu ul.nav_links li
+    {
+        width: 100vw;
+        text-align: center;
+        padding-block: 10px;
+    }
+
+    nav .responsive_menu .nav_links hr
+    {
+        width: 90%;
+        height: 1px;
+        background: var(--nav-link-color);
+    }
+
+    nav .responsive_menu #theme_toggler
+    {
+        font-family: var(--font-roboto);
+        display: flex;
+        width: 100%;
+        gap: 10px;
+        padding-block: 10px;
+    }
+    
+    nav .responsive_menu #theme_toggler span
+    {
+        color: var(--nav-link-color);
+        font-weight: 400;
+        font-size: 16px;
+    }
+}

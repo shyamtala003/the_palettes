@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose best color palette for your next project</title>
+
+    <!-- remix icons cdn for icons-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+
+    <!-- style sheet -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <section class="container">
+        <nav>
+            <div class="logo">
+                <img src="./images/logo.gif" alt="">
+                <span class="logo_text">The Palettes</span>
+            </div>
+            <ul class="nav_links">
+                <li class="nav_link active"><a href="#">Home</a></li>
+                <li class="nav_link"><a href="#">Gradient library</a></li>
+                <li class="nav_link"><a href="#">Github profile</a></li>
+                <li class="nav_link"><a href="#">Source code</a></li>
+            </ul>
+            <button id="theme_toggler"><i class="ri-sun-line"></i></button>
+
+            <!-- button for small device like {tablets,mobiles} -->
+            <button id="menu_toggler"><i class="ri-menu-3-line"></i></button>
+
+            <!-- code for responsive navbar -->
+            <div class="responsive_menu close_navbar">
+                <ul class="nav_links">
+                    <li class="nav_link active"><a href="#">Home</a></li>
+                    <li class="nav_link"><a href="#">Gradient library</a></li>
+                    <li class="nav_link"><a href="#">Github profile</a></li>
+                    <li class="nav_link"><a href="#">Source code</a></li>
+                    <hr>
+                    <button id="theme_toggler"><i class="ri-sun-line"></i> <span>Light</span></button>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+
+    <!-- main script file -->
+    <script src="./main.js"></script>
+</body>
+
+</html>
