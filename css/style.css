@@ -1,10 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap');
 
 :root {
     --font-roboto: 'Roboto', sans-serif;
     --font-firacode: 'Fira Code', monospace;
+    --font-nunito: 'Nunito', sans-serif;
 
     --primary-text-color: #2dd4bf;
+
+    --bg-scrollbar: rgba(17, 24, 39, .9);
+    --bg-scrollbar-thumb: #2dd4bf;
 
     --bg-primary: rgb(17, 24, 39);
 
@@ -12,7 +16,12 @@
     --logo-text-color: #ffffff;
     --nav-link-color: rgb(156, 163, 175);
     --nav-link-color-hover: rgb(229, 231, 236);
+
+    --bg-palette-card-info: rgba(22, 18, 18, .1);
+    --typeface-color: #ffffff;
+    --author-name-color: #ffffff;
 }
+
 
 * {
     margin: 0;
@@ -23,6 +32,19 @@
     border: none;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-scrollbar);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-scrollbar-thumb);
+}
+
+
 section.container {
     position: relative;
     max-width: 100vw;
@@ -32,6 +54,7 @@ section.container {
     background-position-x: center;
     background-size: 55%;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 nav {
@@ -45,6 +68,7 @@ nav {
     font-family: var(--font-roboto);
     background: var(--bg-primary-nav);
     backdrop-filter: blur(16px);
+    z-index: 98;
 }
 
 nav .logo {
@@ -52,10 +76,12 @@ nav .logo {
     align-items: center;
     justify-content: space-between;
     gap: 5px;
+    height: 35px;
 }
 
 nav .logo img {
     width: 35px;
+    height: 35px;
 }
 
 nav .logo span {
@@ -100,10 +126,11 @@ nav button#menu_toggler {
 /* here menu open button is hiiden because menu is visisble default */
 nav button#menu_toggler {
     display: none;
+    width: 24px;
+    height: 24px;
 }
 
-nav .responsive_menu
-{
+nav .responsive_menu {
     display: none;
 }
 
@@ -130,64 +157,242 @@ nav .responsive_menu
     nav ul.nav_links {
         display: none;
     }
-    
-    nav .responsive_menu
-    {
+
+    nav .responsive_menu {
         position: absolute;
-        left: 0%;
-        display: block;  
-        width: 100vw;
-        background:url('../images/dark-bg-1.jpg') ;
+        right: 8%;
+        display: block;
+        min-width: 200px;
+        max-width: 300px;
+        background: url('../images/dark-bg-1.jpg');
         background-position: center;
         background-size: cover;
         transition: all .5s ease-in;
+        border-radius: 10px;
+        overflow-x: hidden;
         z-index: 99;
     }
-    
-    .close_navbar
-    {
+
+    .close_navbar {
         top: -500%;
     }
 
-    .open_navbar
-    {
-        top: 100%;
+    .open_navbar {
+        top: 80%;
     }
 
-    nav .responsive_menu ul.nav_links
-    {
+    nav .responsive_menu ul.nav_links {
         display: flex;
         flex-direction: column;
         background: var(--bg-primary-nav);
     }
 
-    nav .responsive_menu ul.nav_links li
-    {
-        width: 100vw;
+    nav .responsive_menu ul.nav_links li {
         text-align: center;
         padding-block: 10px;
     }
 
-    nav .responsive_menu .nav_links hr
-    {
+    nav .responsive_menu .nav_links hr {
         width: 90%;
         height: 1px;
         background: var(--nav-link-color);
     }
 
-    nav .responsive_menu #theme_toggler
-    {
+    nav .responsive_menu #theme_toggler {
         font-family: var(--font-roboto);
         display: flex;
         width: 100%;
         gap: 10px;
         padding-block: 10px;
     }
-    
-    nav .responsive_menu #theme_toggler span
-    {
+
+    nav .responsive_menu #theme_toggler span {
         color: var(--nav-link-color);
         font-weight: 400;
         font-size: 16px;
     }
+}
+
+
+/* main section */
+main {
+    padding-top: 120px;
+    padding-inline: 8%;
+}
+
+main .palette_card {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    border: 3px solid rgba(17, 24, 39, .4);
+    border-radius: 10px;
+    overflow: hidden;
+    background: url('../images/dar-rays-1.png');
+    background-size: 50%;
+    background-position-x: right;
+    background-repeat: no-repeat;
+}
+
+main .palette_card img {
+    width: 100%;
+    /* border-radius: 10px; */
+}
+
+.palette_card .palette_info {
+    width: 100%;
+    background: var(--bg-palette-card-info);
+    backdrop-filter: blur(17px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.palette_info .typeface {
+    color: var(--typeface-color);
+    font-family: var(--font-nunito);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.palette_info .typeface span.typeface_name {
+    font-weight: 800;
+    border-bottom: 3px solid;
+}
+
+.color_palette {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    padding: 8%;
+}
+
+.color_info {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: rgba(255, 255, 255, .2);
+    border-radius: 8px;
+}
+
+.color_info .color {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.color_info .color span {
+    text-transform: uppercase;
+    font-family: var(--font-roboto);
+    color: #ffffff;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border-radius: 50%;
+    border: none;
+}
+
+input[type="color"]::-moz-color-swatch {
+    border-radius: 5px;
+    border: none;
+}
+
+.copy_code_btn {
+    background-color: transparent;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.author_info {
+    color: var(--nav-link-color);
+    font-family: var(--font-nunito);
+}
+
+.author_info .author {
+    color: var(--author-name-color);
+    font-weight: 700;
+}
+
+.author_info .social_links {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* main section palette card code for teblate and mobile devices */
+
+@media screen and (max-width:1024px) {
+    main .palette_card {
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        border: 3px solid rgba(17, 24, 39, .4);
+        border-radius: 10px;
+        overflow: hidden;
+        background: url('../images/dar-rays-1.png');
+        background-size: 80%;
+        background-position-x: center;
+        background-position-y: bottom;
+        border: 3px solid rgba(255, 255, 255, .2);
+    }
+
+    main .palette_card .palette_info {
+        padding-top: 30px;
+    }
+}
+
+@media screen and (max-width:468px) {
+    
+    .typeface
+    {
+        font-size: 10px;
+    }
+    
+    .color_palette {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .palette_info .typeface
+    {
+        font-size: 14px;
+    }
+
+    .color_info
+    {
+        font-size: 12px;
+    }
+
+    .author_info
+    {
+        font-size: 12px;
+    }
+
 }

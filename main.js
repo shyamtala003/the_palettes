@@ -3,16 +3,17 @@ let menuBtn = document.getElementById('menu_toggler');
 menuBtn.onclick=()=>{
     let btnIcon = menuBtn.firstElementChild;
     let resonsiveMenu=document.querySelector(".responsive_menu");
-
-    if(btnIcon.classList.contains("ri-menu-3-line"))
+    if(btnIcon.getAttribute("src")==="./icons/menu_light.webp")
     {
-        btnIcon.classList.remove("ri-menu-3-line");
-        btnIcon.classList.add("ri-close-line");
+        setTimeout(() => {
+            btnIcon.src=`./icons/close-light.webp`;
+        }, 400);
         resonsiveMenu.classList.add("open_navbar");
     }else
     {
-        btnIcon.classList.remove("ri-close-line");
-        btnIcon.classList.add("ri-menu-3-line");
+        setTimeout(() => {
+            btnIcon.setAttribute("src","./icons/menu_light.webp");
+        }, 400);
         resonsiveMenu.classList.remove("open_navbar");
     }
 }
