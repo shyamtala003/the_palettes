@@ -17,3 +17,27 @@ menuBtn.onclick=()=>{
         resonsiveMenu.classList.remove("open_navbar");
     }
 }
+
+
+// copy to clipboard
+
+
+let copyBtn = document.querySelectorAll('.copy_code_btn');
+var clipboard = new ClipboardJS(copyBtn);
+
+
+clipboard.on('success', function (e) {
+
+  let toastDiv = document.getElementsByClassName('toast')[0];
+  toastDiv.classList.add("toast_open");
+  setTimeout(() => {
+    toastDiv.classList.remove("toast_open");
+  }, 2000)
+
+});
+
+clipboard.on('error', function (e) {
+  console.info('Action:', e.action);
+  console.info('Text:', e.text);
+  console.info('Trigger:', e.trigger);
+});

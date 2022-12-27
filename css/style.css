@@ -20,6 +20,10 @@
     --bg-palette-card-info: rgba(22, 18, 18, .1);
     --typeface-color: #ffffff;
     --author-name-color: #ffffff;
+
+    --text-white:#ffffff;
+
+    --bg-toast:rgba(0,0,0,.9)
 }
 
 
@@ -44,11 +48,18 @@
     background: var(--bg-scrollbar-thumb);
 }
 
+body
+{
+    position: relative;
+    overflow-x: hidden;
+}
 
 section.container {
     position: relative;
     max-width: 100vw;
-    min-height: 200vh;
+    max-height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
     background: url('../images/dark-rays-2.png'), rgb(17, 24, 39);
     background-position-y: -250px;
     background-position-x: center;
@@ -112,7 +123,7 @@ ul.nav_links li.active a {
     color: var(--primary-text-color);
 }
 
-nav button#theme_toggler,
+nav button.theme_toggler,
 nav button#menu_toggler {
     background: transparent;
     display: flex;
@@ -150,7 +161,7 @@ nav .responsive_menu {
         display: flex;
     }
 
-    nav button#theme_toggler {
+    nav button.theme_toggler {
         display: none;
     }
 
@@ -190,26 +201,30 @@ nav .responsive_menu {
     nav .responsive_menu ul.nav_links li {
         text-align: center;
         padding-block: 10px;
+        width: 100%;
+    
     }
 
-    nav .responsive_menu .nav_links hr {
-        width: 90%;
-        height: 1px;
-        background: var(--nav-link-color);
-    }
-
-    nav .responsive_menu #theme_toggler {
+    
+    nav .responsive_menu ul li .theme_toggler {
         font-family: var(--font-roboto);
         display: flex;
         width: 100%;
         gap: 10px;
         padding-block: 10px;
+        border-top:2px solid var(--nav-link-color) ;
     }
 
-    nav .responsive_menu #theme_toggler span {
+    nav .responsive_menu ul li .theme_toggler span {
         color: var(--nav-link-color);
         font-weight: 400;
         font-size: 16px;
+    }
+
+    nav .responsive_menu ul li .theme_toggler span:hover
+    {
+        font-size: 18px;
+        color: var(--nav-link-color-hover);
     }
 }
 
@@ -218,6 +233,9 @@ nav .responsive_menu {
 main {
     padding-top: 120px;
     padding-inline: 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 main .palette_card {
@@ -237,6 +255,7 @@ main .palette_card {
 
 main .palette_card img {
     width: 100%;
+    max-height:475px;
     /* border-radius: 10px; */
 }
 
@@ -288,7 +307,7 @@ main .palette_card img {
     gap: 10px;
 }
 
-.color_info .color span {
+.color_info .color label {
     text-transform: uppercase;
     font-family: var(--font-roboto);
     color: #ffffff;
@@ -342,6 +361,28 @@ input[type="color"]::-moz-color-swatch {
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+.toast
+{
+    position: absolute;
+    bottom:10%;
+    right: -100%;
+    padding: 10px;
+    background: var(--bg-toast);
+    display: grid;
+    place-content: center;
+    font-family: var(--font-roboto);
+    font-weight: 700;
+    transition: all .5s ease-in-out;
+    color: var(--text-white);
+    border-radius: 2px;
+}
+
+.toast_open
+{
+    bottom:10%;
+    right: 10%;
 }
 
 /* main section palette card code for teblate and mobile devices */
