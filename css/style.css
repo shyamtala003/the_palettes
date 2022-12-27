@@ -21,9 +21,9 @@
     --typeface-color: #ffffff;
     --author-name-color: #ffffff;
 
-    --text-white:#ffffff;
+    --text-white: #ffffff;
 
-    --bg-toast:rgba(0,0,0,.9)
+    --bg-toast: rgba(0, 0, 0, .9)
 }
 
 
@@ -48,8 +48,7 @@
     background: var(--bg-scrollbar-thumb);
 }
 
-body
-{
+body {
     position: relative;
     overflow-x: hidden;
 }
@@ -70,7 +69,7 @@ section.container {
 
 nav {
     position: fixed;
-    width: 100%;
+    width: 100vw;
     padding-inline: 8%;
     padding-block: 14px;
     display: flex;
@@ -202,17 +201,17 @@ nav .responsive_menu {
         text-align: center;
         padding-block: 10px;
         width: 100%;
-    
+
     }
 
-    
+
     nav .responsive_menu ul li .theme_toggler {
         font-family: var(--font-roboto);
         display: flex;
         width: 100%;
         gap: 10px;
         padding-block: 10px;
-        border-top:2px solid var(--nav-link-color) ;
+        border-top: 2px solid var(--nav-link-color);
     }
 
     nav .responsive_menu ul li .theme_toggler span {
@@ -221,8 +220,7 @@ nav .responsive_menu {
         font-size: 16px;
     }
 
-    nav .responsive_menu ul li .theme_toggler span:hover
-    {
+    nav .responsive_menu ul li .theme_toggler span:hover {
         font-size: 18px;
         color: var(--nav-link-color-hover);
     }
@@ -255,7 +253,7 @@ main .palette_card {
 
 main .palette_card img {
     width: 100%;
-    max-height:475px;
+    max-height: 475px;
     /* border-radius: 10px; */
 }
 
@@ -363,26 +361,26 @@ input[type="color"]::-moz-color-swatch {
     gap: 10px;
 }
 
-.toast
-{
+.toast {
     position: absolute;
-    bottom:10%;
-    right: -100%;
+    bottom: 10%;
+    right: 10%;
     padding: 10px;
     background: var(--bg-toast);
     display: grid;
     place-content: center;
     font-family: var(--font-roboto);
     font-weight: 700;
-    transition: all .5s ease-in-out;
     color: var(--text-white);
     border-radius: 2px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
 }
 
-.toast_open
-{
-    bottom:10%;
-    right: 10%;
+.toast_open {
+    visibility: visible;
+    opacity: 1;
 }
 
 /* main section palette card code for teblate and mobile devices */
@@ -410,29 +408,25 @@ input[type="color"]::-moz-color-swatch {
 }
 
 @media screen and (max-width:468px) {
-    
-    .typeface
-    {
+
+    .typeface {
         font-size: 10px;
     }
-    
+
     .color_palette {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .palette_info .typeface
-    {
+    .palette_info .typeface {
         font-size: 14px;
     }
 
-    .color_info
-    {
+    .color_info {
         font-size: 12px;
     }
 
-    .author_info
-    {
+    .author_info {
         font-size: 12px;
     }
 
