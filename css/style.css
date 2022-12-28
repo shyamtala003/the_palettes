@@ -20,6 +20,7 @@
     --bg-palette-card-info: rgba(22, 18, 18, .1);
     --typeface-color: #ffffff;
     --author-name-color: #ffffff;
+    --author-social-icon:#f1f1f1;
 
     --text-white: #ffffff;
 
@@ -276,8 +277,19 @@ main .palette_card img {
 }
 
 .palette_info .typeface span.typeface_name {
+    text-transform: capitalize;
     font-weight: 800;
     border-bottom: 3px solid;
+}
+
+.svg_icon
+{
+    fill:var(--author-social-icon);
+}
+
+.social_links a:hover .svg_icon
+{
+    fill:#e74d89;
 }
 
 .color_palette {
