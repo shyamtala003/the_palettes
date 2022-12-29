@@ -19,41 +19,43 @@
 </head>
 
 <body>
-    <section class="container">
-        <nav>
-            <div class="logo">
-                <img src="./images/logo.webp" alt="Logo">
-                <span class="logo_text">The Palettes</span>
-            </div>
+    <nav>
+        <div class="logo">
+            <img src="./images/logo.webp" alt="Logo">
+            <span class="logo_text">The Palettes</span>
+        </div>
+        <ul class="nav_links">
+            <li class="nav_link active"><a href="#" aria-label="Home">Home</a></li>
+            <li class="nav_link"><a href="https://monogradient.vercel.app/" aria-label="monogradient" target="_blank">Gradient library</a></li>
+            <li class="nav_link"><a href="https://github.com/shyamtala003" aria-label="github profile shyamtala003" target="_blank">Github profile</a></li>
+            <li class="nav_link"><a href="https://github.com/shyamtala003/the_palettes" aria-label="source code-Github" target="_blank">Source code</a></li>
+        </ul>
+        <button class="theme_toggler"><img src="./icons/sun.webp" alt="light theme"></button>
+
+        <!-- button for small device like {tablets,mobiles} -->
+        <button id="menu_toggler" aria-label="menu_toggler"><img src="./icons/menu_light.webp" alt="menu button"></button>
+
+        <!-- code for responsive navbar -->
+        <div class="responsive_menu close_navbar">
             <ul class="nav_links">
                 <li class="nav_link active"><a href="#" aria-label="Home">Home</a></li>
                 <li class="nav_link"><a href="https://monogradient.vercel.app/" aria-label="monogradient" target="_blank">Gradient library</a></li>
-                <li class="nav_link"><a href="https://github.com/shyamtala003" aria-label="github profile shyamtala003" target="_blank">Github profile</a></li>
+                <li class="nav_link"><a href="https://github.com/shyamtala003" aria-label="github profile shyamtala003 target="_blank">Github profile</a></li>
                 <li class="nav_link"><a href="https://github.com/shyamtala003/the_palettes" aria-label="source code-Github" target="_blank">Source code</a></li>
+                <li><hr></li>
+                <li><button class="theme_toggler"><img src="./icons/sun.webp"  alt="light theme"> <span>Light</span></button></li>
             </ul>
-            <button class="theme_toggler"><img src="./icons/sun.webp" alt="light theme"></button>
-
-            <!-- button for small device like {tablets,mobiles} -->
-            <button id="menu_toggler" aria-label="menu_toggler"><img src="./icons/menu_light.webp" alt="menu button"></button>
-
-            <!-- code for responsive navbar -->
-            <div class="responsive_menu close_navbar">
-                <ul class="nav_links">
-                    <li class="nav_link active"><a href="#" aria-label="Home">Home</a></li>
-                    <li class="nav_link"><a href="https://monogradient.vercel.app/" aria-label="monogradient" target="_blank">Gradient library</a></li>
-                    <li class="nav_link"><a href="https://github.com/shyamtala003" aria-label="github profile shyamtala003 target="_blank">Github profile</a></li>
-                    <li class="nav_link"><a href="https://github.com/shyamtala003/the_palettes" aria-label="source code-Github" target="_blank">Source code</a></li>
-                    <li><hr></li>
-                    <li><button class="theme_toggler"><img src="./icons/sun.webp"  alt="light theme"> <span>Light</span></button></li>
-                </ul>
-            </div>
-        </nav>
+        </div>
+    </nav>
+    <section class="container">
 
         <main>
             <!-- here data comes from palette schema js file -->
         </main>
         
     </section>
+
+    <!-- footer -->
     
     <!-- toast alert -->
     <!-- color code copied toast notifier -->

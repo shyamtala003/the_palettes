@@ -54,20 +54,6 @@ body {
     overflow-x: hidden;
 }
 
-section.container {
-    position: relative;
-    max-width: 100vw;
-    max-height: 100vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    background: url('../images/dark-rays-2.png'), rgb(17, 24, 39);
-    background-position-y: -250px;
-    background-position-x: center;
-    background-size: 55%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
 nav {
     position: fixed;
     width: 100vw;
@@ -228,13 +214,30 @@ nav .responsive_menu {
 }
 
 
-/* main section */
+/* container section */
+section.container {
+    position: relative;
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: url('../images/dark-rays-2.png'), rgb(17, 24, 39);
+    background-position-y: -250px;
+    background-position-x: center;
+    background-size: 55%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* scroll-snap-type:y mandatory; */
+}
+
+/* main section inside container section */
 main {
-    padding-top: 110px;
+    padding-top: 100px;
     padding-inline: 8%;
     display: flex;
     flex-direction: column;
     gap: 50px;
+    /* scroll-snap-type: y mandatory; */
 }
 
 main .palette_card {
@@ -250,7 +253,9 @@ main .palette_card {
     background-size: 50%;
     background-position-x: right;
     background-repeat: no-repeat;
+    /* scroll-snap-align: start; */
 }
+
 
 main .palette_card img {
     width: 100%;
@@ -420,6 +425,33 @@ input[type="color"]::-moz-color-swatch {
 }
 
 @media screen and (max-width:468px) {
+
+    nav
+    {
+        padding: 8px 12px;
+    }
+
+    nav .logo span
+    {
+        display: none;
+    }
+
+    nav .logo img
+    {
+        width: 28px;
+        height: 28px;
+    }
+
+    #menu_toggler img
+    {
+        width: 20px;
+        height: 20px;
+    }
+
+    main
+    {
+        padding-inline: 5%;
+    }
 
     .typeface {
         font-size: 10px;
