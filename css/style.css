@@ -230,11 +230,11 @@ nav .responsive_menu {
 
 /* main section */
 main {
-    padding-top: 120px;
+    padding-top: 110px;
     padding-inline: 8%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
 }
 
 main .palette_card {
@@ -254,7 +254,7 @@ main .palette_card {
 
 main .palette_card img {
     width: 100%;
-    max-height: 475px;
+    max-height: 500px;
     /* border-radius: 10px; */
 }
 
