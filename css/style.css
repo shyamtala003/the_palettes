@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap');
 
-:root {
+:root{
     --font-roboto: 'Roboto', sans-serif;
     --font-firacode: 'Fira Code', monospace;
     --font-nunito: 'Nunito', sans-serif;
+}
+
+.dark_theme{
 
     --primary-text-color: #2dd4bf;
 
@@ -13,18 +16,49 @@
     --bg-primary: rgb(17, 24, 39);
 
     --bg-primary-nav: rgba(17, 24, 39, .5);
+    --bg-primary-responsive-nav:rgba(17, 24, 39, .9);
     --logo-text-color: #ffffff;
     --nav-link-color: rgb(156, 163, 175);
     --nav-link-color-hover: rgb(229, 231, 236);
 
+    --palette-card-border:rgba(17, 24, 39, .7);
     --bg-palette-card-info: rgba(22, 18, 18, .1);
     --typeface-color: #ffffff;
+    --bg-color-info:rgba(255, 255, 255, .2);
     --author-name-color: #ffffff;
     --author-social-icon: #f1f1f1;
 
     --text-white: #ffffff;
 
-    --bg-toast: rgba(0, 0, 0, .9)
+    --bg-toast: rgba(0, 0, 0, .9);
+}
+
+.light_theme
+{
+    
+    --primary-text-color: #2dd4bf;
+
+    --bg-scrollbar: rgba(255, 255, 255, .9);
+    --bg-scrollbar-thumb: #2dd4bf;
+
+    --bg-primary: rgb(255,255,255);
+
+    --bg-primary-nav: rgba(255, 255, 255, .5);
+    --bg-primary-responsive-nav:rgba(255, 255, 255, .9);
+    --logo-text-color: #000000;
+    --nav-link-color: #6b7280;
+    --nav-link-color-hover: rgb(0, 0, 0);
+
+    --palette-card-border:rgba(45, 212, 191,.3);
+    --bg-palette-card-info: rgba(255, 255, 255, .1);
+    --typeface-color: #000000;
+    --bg-color-info:rgba(0, 0, 0, .2);
+    --author-name-color: #000000;
+    --author-social-icon: #1f1f1f;
+
+    --text-white: #000000;
+
+    --bg-toast: rgba(255, 255, 255, .9);
 }
 
 
@@ -135,7 +169,7 @@ nav .responsive_menu {
 @media screen and (max-width:768px) {
 
     section.container {
-        background: url('../images/dark-rays-2.png'), rgb(17, 24, 39);
+        background: url('../images/dark-rays-2.png'), var(--bg-primary);
         background-position-y: -80px;
         background-position-x: center;
         background-size: contain;
@@ -161,7 +195,7 @@ nav .responsive_menu {
         display: block;
         min-width: 200px;
         max-width: 300px;
-        background: url('../images/dark-bg-1.jpg');
+        background: url('../images/dark-rays-1.png'),var(--bg-primary-responsive-nav);
         background-position: center;
         background-size: cover;
         transition: all .5s ease-in;
@@ -202,13 +236,13 @@ nav .responsive_menu {
     }
 
     nav .responsive_menu ul li .theme_toggler span {
-        color: var(--nav-link-color);
+        color: var(--nav-link-color-hover);
         font-weight: 400;
         font-size: 16px;
     }
 
     nav .responsive_menu ul li .theme_toggler span:hover {
-        font-size: 18px;
+        font-size: 15px;
         color: var(--nav-link-color-hover);
     }
 }
@@ -221,7 +255,7 @@ section.container {
     max-height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
-    background: url('../images/dark-rays-2.png'), rgb(17, 24, 39);
+    background: url('../images/dark-rays-2.png'), var(--bg-primary);
     background-position-y: -250px;
     background-position-x: center;
     background-size: 55%;
@@ -246,10 +280,10 @@ main .palette_card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
-    border: 3px solid rgba(17, 24, 39, .4);
+    border: 3px solid var(--palette-card-border);
     border-radius: 10px;
     overflow: hidden;
-    background: url('../images/dar-rays-1.png');
+    background: url('../images/dark-rays-1.png');
     background-size: 50%;
     background-position-x: right;
     background-repeat: no-repeat;
@@ -259,8 +293,7 @@ main .palette_card {
 
 main .palette_card img {
     width: 100%;
-    max-height: 500px;
-    /* border-radius: 10px; */
+    max-height: 468px;
 }
 
 .palette_card .palette_info {
@@ -309,7 +342,7 @@ main .palette_card img {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background: rgba(255, 255, 255, .2);
+    background: var(--bg-color-info);
     border-radius: 8px;
 }
 
@@ -407,14 +440,12 @@ input[type="color"]::-moz-color-swatch {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
-        border: 3px solid rgba(17, 24, 39, .4);
         border-radius: 10px;
         overflow: hidden;
-        background: url('../images/dar-rays-1.png');
+        background: url('../images/dark-rays-1.png');
         background-size: 80%;
         background-position-x: center;
         background-position-y: bottom;
-        border: 3px solid rgba(255, 255, 255, .2);
     }
 
     main .palette_card .palette_info {
@@ -443,7 +474,7 @@ input[type="color"]::-moz-color-swatch {
     }
 
     section.container {
-        background: url('../images/dark-rays-2.png'), rgb(17, 24, 39);
+        background: url('../images/dark-rays-2.png'), var(--bg-primary);
         background-position-y: -105px;
         background-position-x: center;
         background-size: 100%;
