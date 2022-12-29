@@ -20,7 +20,7 @@
     --bg-palette-card-info: rgba(22, 18, 18, .1);
     --typeface-color: #ffffff;
     --author-name-color: #ffffff;
-    --author-social-icon:#f1f1f1;
+    --author-social-icon: #f1f1f1;
 
     --text-white: #ffffff;
 
@@ -287,14 +287,12 @@ main .palette_card img {
     border-bottom: 3px solid;
 }
 
-.svg_icon
-{
-    fill:var(--author-social-icon);
+.svg_icon {
+    fill: var(--author-social-icon);
 }
 
-.social_links a:hover .svg_icon
-{
-    fill:#e74d89;
+.social_links a:hover .svg_icon {
+    fill: #e74d89;
 }
 
 .color_palette {
@@ -426,30 +424,34 @@ input[type="color"]::-moz-color-swatch {
 
 @media screen and (max-width:468px) {
 
-    nav
-    {
+    nav {
         padding: 8px 12px;
     }
 
-    nav .logo span
-    {
+    nav .logo span {
         display: none;
     }
 
-    nav .logo img
-    {
+    nav .logo img {
         width: 28px;
         height: 28px;
     }
 
-    #menu_toggler img
-    {
+    #menu_toggler img {
         width: 20px;
         height: 20px;
     }
 
-    main
-    {
+    section.container {
+        background: url('../images/dark-rays-2.png'), rgb(17, 24, 39);
+        background-position-y: -105px;
+        background-position-x: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    main {
         padding-inline: 5%;
     }
 
