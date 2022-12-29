@@ -456,22 +456,13 @@ input[type="color"]::-moz-color-swatch {
 @media screen and (max-width:468px) {
 
     nav {
-        padding: 8px 12px;
+        padding: 2% 5%;
     }
 
     nav .logo span {
-        display: none;
+        font-size: 12px;
     }
 
-    nav .logo img {
-        width: 28px;
-        height: 28px;
-    }
-
-    #menu_toggler img {
-        width: 20px;
-        height: 20px;
-    }
 
     section.container {
         background: url('../images/dark-rays-2.png'), var(--bg-primary);
