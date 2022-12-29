@@ -205,7 +205,7 @@ nav .responsive_menu {
     }
 
     .close_navbar {
-        top: -500%;
+        top: -1000%;
     }
 
     .open_navbar {
@@ -474,6 +474,7 @@ input[type="color"]::-moz-color-swatch {
     }
 
     main {
+        padding-top: 70px;
         padding-inline: 5%;
     }
 
